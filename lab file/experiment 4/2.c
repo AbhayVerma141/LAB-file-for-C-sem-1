@@ -1,19 +1,24 @@
 //Declare a local variable inside a function and try to access it outside the function. Compare this with accessing the global variable from within the function. 
 
 #include<stdio.h>
+int Area() //function to calculate Area
+{
+    int x , y;
+    printf("enter the value of the sides of rectangle = ");
+    scanf("%d %d ", &x, &y);
+    printf ("area of rectangle = %d", x * y);
+}
+int Parametre() //function to calculate parametre
+{
+    int z;
+    z = 2 * ( x + y );
+    printf ("the parametre of the rectangle is = %d", z);
+}
 int main()
 {
-    int z = 1; //global varaible
-    for(int x = 0; x < 10; x++)
-    {
-        int y; //local variable
-        y = y * x;
-        z = z * x;
-        printf ("the table is = %d \n", y );
-    }
-    //printf("enter the number = "); //these commands can't be used outside the function as y is not a global variable
-    //scanf("%d", &y);
-    printf("enter the number = ");
-    scanf("%d", &z);
-    printf("the table is = %d \n", z );
+    Area();
+    Parametre(); //calling functions
+    return 0;
 }
+
+//the output generates that x and y are undeclared identifiers which means we can no use local varaible of one function in another 
