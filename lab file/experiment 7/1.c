@@ -4,31 +4,58 @@
 //c. Addition and subtraction of two complex numbers
 
 #include<stdio.h>
-int read()
+struct complex
 {
-    typedef struct number
-    {
-        int real;
-        int image;
-    };   
+    int real;
+    int image;
+}n;
+struct complex number (struct complex n) //use struct cause we need to use struct data type to insert value
+{
     printf("enter the real part of the number = ");
-    scanf("%d", &real);                    
+    scanf("%d", &n.real);
     printf("enter the imaginary part of the number = ");
-    scanf("%d", &image);
+    scanf("%d", &n.image);
+    return n;
 }
-int write()
-{ //display a complex number
-    int read(number);
-    if (image >= 0)
-    { 
-        printf ("complex number is = %d + %di \n",read() , image);
-    }
+void print(struct complex x) //used void cause we dont need to give input
+{
+ if (x.image >= 0)
+        printf("%.2f + %.2fi", x.real, x.imag);
     else
-    {
-        printf ("complex number is = -%d - %di \n", real , image);
-    }
-}
+        printf("%.2f - %.2fi", x.real, x.imag);
+};
+struct complex add(struct complex n1, struct complex n2) //addition
+{
+    struct complex ans;
+    ans.real = n1.real + n2.real;
+    ans.image = n1.image + n2.image;
+    return ans;
+};
+struct complex subtract(struct complex n1, struct complex n2) //subtraction
+{
+    struct complex ans;
+    ans.real = n1.real - n2.real;
+    ans.image = n1.image - n2.image;
+    return ans;
+};
 int main()
 {
-    int read();
+    int x;
+    printf("how many complex numbers you want to print = ");
+    scanf("%d", &x);
+    struct complex [x];
+    printf("enter your complex number below:");
+    for( int i = 0 ; i < x ; i++ ) //loop to input values
+    {
+        printf("enter the real part of the complex number = ");
+        scanf("%d", &n.real);
+        printf("enter the imaginary part of the complex number = ");
+        scanf("%d", &n.image);
+    }
+    printf("your complex numbers are: ");
+    for( int i = 0 ; i < x ; i++ )
+    {
+        printf struct complex (i);
+    }
+    return 0;
 }
